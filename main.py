@@ -25,7 +25,7 @@ def check_lsb_channel(input_im, channel):
 
 if __name__ == '__main__':
     image_name = "test1"
-    image = img.imread(image_name + ".jpg")
+    image = img.imread("images/" + image_name + ".jpg")
     image_check = np.copy(image)
     image[0, 0]
     image_check_r = check_lsb_channel(image, 0)
