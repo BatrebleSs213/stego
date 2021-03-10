@@ -6,6 +6,6 @@ Thus, noise is generated on each channel of the image. If there is a stego conta
 
 ## Install requirements
 
-'''python
+```python
 pip3 install -r requirements.txt
-'''
+```
