@@ -1,5 +1,11 @@
-# Проверка наличия стего контейнера в изображении методом LSB
+# Checking a stego container in an image (LSB)
 
-Проверка наличия стего контейнера в изображении осуществляется с помощью метода формирования изображения той же размерности, что исходное. Происходит побитовая проверка каждого пикселя изображения в разделенных каналах (R, G, B). Проверка выполняется по наименьшему значащему биту. В случае, если он равен единице, осуществляется закраска пикселя изображения произвольным цветом, для примера, черным.
+Checking the stego container in the image is carried out using the method of forming an image of the same dimension as the original one. Bitwise verification of each pixel of the image in the split channels (R, G, B) is performed. The check is performed on the least significant bit. If the bit is equal to one, the image pixel is filled with an arbitrary color, for example, black.
 
-Таким образом, на каждом канале изображения формируется шум, в случае наличия стего контейнера в изображении, зашифрованные участки будут визуально выделяться в одном или нескольких каналах. Наблюдатель сможет визуально определить имеющиеся на изображении отличительные признаки стего контейнера – неравномерные области наложения шума.
+Thus, noise is generated on each channel of the image. If there is a stego container in the image, the encrypted areas will be visually highlighted in one or several channels. The observer will be able to visually identify the distinctive features of the stego container on the image - uneven areas of overlapping noise.
+
+## Install requirements
+
+'''python
+pip3 install -r requirements.txt
+'''
