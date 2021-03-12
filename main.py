@@ -24,8 +24,8 @@ def check_lsb_channel(input_im, channel):
 
 
 if __name__ == '__main__':
-    image_name = "test1"
-    image = img.imread("images/" + image_name + ".jpg")
+    test_image_name = input("Write ur image name: ")
+    image = img.imread("images/" + test_image_name + ".jpg")
     image_check = np.copy(image)
     image[0, 0]
     image_check_r = check_lsb_channel(image, 0)
@@ -36,3 +36,6 @@ if __name__ == '__main__':
     plt.figure(figsize = (12,4))
     plt.imshow(concate)
     plt.show()
+
+    concate = Image.fromarray(concate)
+    concate.save("images/" + test_image_name + "_result.png")
