@@ -1,4 +1,3 @@
-# pip3 install -r requirements.txt
 import numpy as np
 import matplotlib.image as img
 import matplotlib.pyplot as plt
@@ -23,9 +22,14 @@ def check_lsb_channel(input_im, channel):
     return output_im
 
 
+def save_result_image(result_image):
+    result_image = Image.fromarray(result_image)
+    result_image.save("images/" + test_image + "_result.png")
+
+
 if __name__ == '__main__':
-    test_image_name = input("Write ur image name: ")
-    image = img.imread("images/" + test_image_name + ".jpg")
+    test_image = input("Write ur image name: ")
+    image = img.imread("images/" + test_image + ".jpg")
     image_check = np.copy(image)
     image[0, 0]
     image_check_r = check_lsb_channel(image, 0)
@@ -37,5 +41,4 @@ if __name__ == '__main__':
     plt.imshow(concate)
     plt.show()
 
-    concate = Image.fromarray(concate)
-    concate.save("images/" + test_image_name + "_result.png")
+    save_result_image(concate)
